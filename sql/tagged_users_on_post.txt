@@ -1,0 +1,4 @@
+SELECT p2.tagged_user_id, p2.tagged_user_name
+FROM posts p1
+	JOIN posts p2 ON p2.parent_id = p1.id
+WHERE p1.parent_id = "323288791493138_328345830987434"

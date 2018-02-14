@@ -1,9 +1,0 @@
-SELECT p2.message, p2.source, p1.counter, p2.total_reactions
-FROM (
-	select parent_id, COUNT(id) counter
-	from posts
-	WHERE type = "COMMENT"
-	GROUP BY parent_id
-	) p1
-	LEFT JOIN posts p2 ON p1.parent_id = p2.id
-order by p1.counter desc

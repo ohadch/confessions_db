@@ -1,0 +1,9 @@
+SELECT p2.message, p1.num_comments, p2.total_reactions, p2.source
+FROM (
+	select parent_id, COUNT(id) num_comments
+	from posts
+	WHERE type = "COMMENT"
+	GROUP BY parent_id
+	) p1
+	LEFT JOIN posts p2 ON p1.parent_id = p2.id
+order by p1.num_comments desc

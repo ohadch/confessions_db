@@ -1,0 +1,5 @@
+SELECT tagged_user_id, tagged_user_name, count(parent_id) num_posts_tagged
+FROM posts
+WHERE tagged_user_id is not null
+GROUP BY tagged_user_id, tagged_user_name
+ORDER BY num_posts_tagged DESC

@@ -1,0 +1,3 @@
+SELECT message, source, total_reactions
+FROM posts
+WHERE parent_id = "323288791493138_328345830987434"

@@ -1,0 +1,5 @@
+SELECT p3.message post, p2.message comment, p2.source
+FROM posts p1
+	JOIN posts p2 on p1.parent_id = p2.id
+	JOIN posts p3 on p2.parent_id = p3.id
+WHERE p1.tagged_user_name = "Orel Haim"
