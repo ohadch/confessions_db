@@ -1,4 +1,4 @@
-SELECT p1.source, p1.type, p1.message, p3.counter comments, p1.total_reactions, p1.like, p1.love, p1.haha, p1.wow, p1.angry, p1.sad
+SELECT p1.source, p1.type, p1.message, p3.counter comments, p1.total_reactions, p1.like, p1.love, p1.haha, p1.wow, p1.angry, p1.sad, p1.id
 FROM posts p1
 	LEFT JOIN (
 		SELECT parent_id, COUNT([index]) counter
@@ -7,3 +7,4 @@ FROM posts p1
 		GROUP BY parent_id
 	) p3
 	on p1.id = p3.parent_id
+ORDER BY created_time DESC
